@@ -4,7 +4,15 @@ import { Link } from "react-router-dom";
 
 const CraftCard = ({craft}) => {
 
-    const { Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description} = craft;
+    
+
+    const { _id, Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description} = craft;
+
+    fetch(`http://localhost:5000/craft/${_id}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
 
 
 
@@ -25,8 +33,10 @@ const CraftCard = ({craft}) => {
                     <p><span className='font-bold'>Price: </span>{Price}</p>
                     <p><span className='font-bold'>Processing Time:</span>{Processing}</p>
 
-                    <div className="card-actions">
-                        {/* <Link to={`/estate/${id}`} className="btn text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><button>View Property</button></Link> */}
+                    <div className="card-actions w-full">
+                        <Link className="w-full" to={`/craft/${_id}`}>
+                        <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

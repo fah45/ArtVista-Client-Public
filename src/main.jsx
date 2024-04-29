@@ -15,6 +15,7 @@ import ErrorPage from './components/ErrorPage.jsx';
 import AddCraft from './components/AddCraft.jsx';
 import AllCraft from './components/AllCraft.jsx';
 import MyCraft from './components/MyCraft.jsx';
+import CraftCard from './components/CraftCard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,16 @@ const router = createBrowserRouter([
       {
         path: "my-craft",
         element: <MyCraft></MyCraft>
+      },
+      {
+        path: "/craft/:id",
+        element: <CraftCard></CraftCard>,
+        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+      },
+      {
+        path: "/craft/:id",
+        element: <craftDetails></craftDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
       }
     ]
   },
