@@ -1,27 +1,6 @@
 
 
-const AddCraft = () => {
-    const handleAddCraft = event => {
-        event.preventDefault();
-
-        const form = event.target;
-
-        const Subcategory = form.Subcategory.value;
-        const item  = form.item.value;
-        const Price = form.Price.value;
-        const Rating = form.Rating.value;
-        const PhotoUrl = form.PhotoUrl.value;
-        const Customization = form.Customization.value;
-        const Stock  = form.Stock.value;
-        const Processing  = form.Processing.value;
-        const Username = form.Username.value;
-        const  email = form.email.value;
-        const  Description = form.Description.value;
-
-        const newArt = {Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username,  email,  Description}
-        console.log(newArt);
-        
-    }
+const Update = () => {
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-4xl text-center font bold">Add Art & Craft</h2>
@@ -79,7 +58,7 @@ const AddCraft = () => {
                             </div>
                             <div className="col-span-full">
                                 <div className="flex items-center space-x-2">
-                                    <button type="submit" className="px-4 py-2 border rounded-md border-gray-100 dark:border-gray-800 bg-green-400 w-full">AddCraft</button>
+                                    <button type="submit" className="px-4 py-2 border rounded-md border-gray-100 dark:border-gray-800 bg-green-400 w-full">UpdateCraft</button>
                                 </div>
                             </div>
                         </div>
@@ -87,8 +66,7 @@ const AddCraft = () => {
                 </form>
             </section>
         </div>
-
     );
 };
 
-export default AddCraft;
+export default Update;
