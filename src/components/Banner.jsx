@@ -1,11 +1,13 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Typewriter } from 'react-simple-typewriter'
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
     return (
@@ -17,7 +19,16 @@ const Banner = () => {
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md text-left">
                                 <h1 className="mb-5 text-5xl font-bold">Discover the Creativity at ArtisanVista</h1>
-                                <p className="mb-5">Handcrafted World </p>
+                                {/* <Typewriter {/* Props */} 
+                                <Typewriter
+                                        words={['Creativity at Art&Craft','ArtisanVista']}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle='_'
+                                        typeSpeed={80}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
                             </div>
                         </div>
                     </div>
@@ -28,7 +39,15 @@ const Banner = () => {
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl  font-bold">Discover the Creativity at ArtisanVista</h1>
-                                <p className="mb-5">Handcrafted World </p>
+                                <Typewriter
+                                        words={['Handcrafted World','ArtisanVista']}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle='_'
+                                        typeSpeed={80}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
                             </div>
                         </div>
                     </div>
@@ -39,7 +58,15 @@ const Banner = () => {
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Discover the Creativity at ArtisanVista</h1>
-                                <p className="mb-5">Handcrafted World </p>
+                                <Typewriter
+                                        words={['CraftCrest','ArtisanVista']}
+                                        loop={true}
+                                        cursor={true}
+                                        cursorStyle='_'
+                                        typeSpeed={80}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
                             </div>
                         </div>
                     </div>
