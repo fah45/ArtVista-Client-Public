@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 const AddCraft = () => {
     const handleAddCraft = event => {
@@ -7,20 +7,42 @@ const AddCraft = () => {
         const form = event.target;
 
         const Subcategory = form.Subcategory.value;
-        const item  = form.item.value;
+        const item = form.item.value;
         const Price = form.Price.value;
         const Rating = form.Rating.value;
         const PhotoUrl = form.PhotoUrl.value;
         const Customization = form.Customization.value;
-        const Stock  = form.Stock.value;
-        const Processing  = form.Processing.value;
+        const Stock = form.Stock.value;
+        const Processing = form.Processing.value;
         const Username = form.Username.value;
-        const  email = form.email.value;
-        const  Description = form.Description.value;
+        const email = form.email.value;
+        const Description = form.Description.value;
 
-        const newArt = {Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username,  email,  Description}
+        const newArt = { Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description }
         console.log(newArt);
-        
+
+        // send the data to the server
+        fetch('http://localhost:5000/craft', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newArt)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+
+                }
+            })
+
     }
     return (
         <div className="bg-[#F4F3F0] p-24">
