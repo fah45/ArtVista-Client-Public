@@ -21,7 +21,7 @@ const Banner = () => {
                                 <h1 className="mb-5 text-5xl font-bold">Discover the Creativity at ArtisanVista</h1>
                                 {/* <Typewriter {/* Props */} 
                                 <Typewriter
-                                        words={['Creativity at Art&Craft','ArtisanVista']}
+                                        words={[' Water-color Painting',' Floral Watercolor Art']}
                                         loop={true}
                                         cursor={true}
                                         cursorStyle='_'
@@ -40,7 +40,7 @@ const Banner = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl  font-bold">Discover the Creativity at ArtisanVista</h1>
                                 <Typewriter
-                                        words={['Handcrafted World','ArtisanVista']}
+                                        words={['Handcrafted World',' Abstract Oil Painting']}
                                         loop={true}
                                         cursor={true}
                                         cursorStyle='_'
@@ -59,7 +59,7 @@ const Banner = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Discover the Creativity at ArtisanVista</h1>
                                 <Typewriter
-                                        words={['CraftCrest','ArtisanVista']}
+                                        words={['CraftCrest','Oil Painting:']}
                                         loop={true}
                                         cursor={true}
                                         cursorStyle='_'
