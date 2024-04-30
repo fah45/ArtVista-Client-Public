@@ -25,7 +25,7 @@ const MyCraft = () => {
                                 <p><span className='font-bold'>Processing Time:</span>{data.Processing}</p>
 
                                 <div className="card-actions w-full">
-                                    <Link className="w-full" to={`/`}>
+                                    <Link className="w-full" to={`/update/${data._id}`}>
                                         <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">Update</button>
                                     </Link>
                                     <Link className="w-full" to={`/`}>

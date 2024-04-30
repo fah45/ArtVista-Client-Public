@@ -9,7 +9,7 @@ const CraftCard = ({craft}) => {
     // console.log(loadedData)
     const { _id, Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description } = craft;
 
-    // fetch(`http://localhost:5000/craft/${_id}`)
+    // fetch(`https://art-craft-server-rho.vercel.app/craft/${_id}`)
     //     .then(res => res.json())
     //     .then(data => {
     //         console.log(data)

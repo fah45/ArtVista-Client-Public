@@ -18,6 +18,7 @@ import MyCraft from './components/MyCraft.jsx';
 import CraftCard from './components/CraftCard.jsx';
 import CardDetails from './components/CardDetails.jsx';
 import PrivateRoutes from './Provider/PrivateRoutes.jsx';
+import Update from './components/Update.jsx';
 
 
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://art-craft-server-rho.vercel.app/craft')
       },
       {
         path: "/login",
@@ -47,15 +48,21 @@ const router = createBrowserRouter([
       {
         path: "all-craft",
         element: <AllCraft></AllCraft>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://art-craft-server-rho.vercel.app/craft')
       },
       {
         path: "my-craft/:id",
         element: <PrivateRoutes>
           <MyCraft></MyCraft>
         </PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/my-craft/${params.id}`)
-
+        loader: ({ params }) => fetch(`https://art-craft-server-rho.vercel.app/my-craft/${params.id}`)
+      },
+      {
+        path: "/update/:id",
+        element: <PrivateRoutes>
+          <Update></Update>
+        </PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://art-craft-server-rho.vercel.app/craft/${params.id}`)
       },
       {
         path: "/craft",
@@ -66,7 +73,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
           <CardDetails></CardDetails>
         </PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({ params }) => fetch(`https://art-craft-server-rho.vercel.app/craft/${params.id}`)
       }
 
     ]

@@ -30,7 +30,7 @@ const Login = () => {
         // new user has been
         
         const user = { email };
-        fetch('http://localhost:5000/user', {
+        fetch('https://art-craft-server-rho.vercel.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
