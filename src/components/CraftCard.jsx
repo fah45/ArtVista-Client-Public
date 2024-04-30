@@ -1,18 +1,19 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const CraftCard = ({craft}) => {
 
-    
 
-    const { _id, Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description} = craft;
+    // const loadedData = useLoaderData()
+    // console.log(loadedData)
+    const { _id, Subcategory, item, Price, Rating, PhotoUrl, Customization, Stock, Processing, Username, email, Description } = craft;
 
-    fetch(`http://localhost:5000/craft/${_id}`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    })
+    // fetch(`http://localhost:5000/craft/${_id}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     })
 
 
 
@@ -26,7 +27,7 @@ const CraftCard = ({craft}) => {
                     <img src={PhotoUrl} alt="shoes" className="rounded-xl w-[350px] h-[180px]" />
                 </figure>
                 <div className="card-body items-left text-left">
-                    <h2 className="card-title">{}</h2>
+                    <h2 className="card-title">{ }</h2>
 
                     <p><span className='font-bold'>Item Name: </span>{item}</p>
 
@@ -35,7 +36,7 @@ const CraftCard = ({craft}) => {
 
                     <div className="card-actions w-full">
                         <Link className="w-full" to={`/craft/${_id}`}>
-                        <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">View Details</button>
+                            <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">View Details</button>
                         </Link>
                     </div>
                 </div>

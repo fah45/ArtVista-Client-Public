@@ -9,6 +9,8 @@ const Home = () => {
 
     const crafts = useLoaderData();
 
+    console.log(crafts)
+
 
 
     return (

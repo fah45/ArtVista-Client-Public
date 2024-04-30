@@ -16,6 +16,9 @@ import AddCraft from './components/AddCraft.jsx';
 import AllCraft from './components/AllCraft.jsx';
 import MyCraft from './components/MyCraft.jsx';
 import CraftCard from './components/CraftCard.jsx';
+import CardDetails from './components/CardDetails.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -42,22 +45,23 @@ const router = createBrowserRouter([
       },
       {
         path: "all-craft",
-        element: <AllCraft></AllCraft>
+        element: <AllCraft></AllCraft>,
+        loader: () => fetch('http://localhost:5000/craft')
       },
       {
         path: "my-craft",
         element: <MyCraft></MyCraft>
       },
       {
-        path: "/craft/:id",
+        path: "/craft",
         element: <CraftCard></CraftCard>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
       },
       {
         path: "/craft/:id",
-        element: <craftDetails></craftDetails>,
+        element: <CardDetails></CardDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
       }
+      
     ]
   },
 ]);
