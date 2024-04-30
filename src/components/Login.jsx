@@ -27,6 +27,22 @@ const Login = () => {
         const password = form.get("password")
         setSuccess("")
         setErrorMessage("")
+        // new user has been
+        
+        const user = { email };
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                console.log('user added to the database')
+            }
+        })
 
         if (password.length < 6) {
             setErrorMessage("Password should be at least 6 characters or longer");
@@ -68,6 +84,7 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
             } // navigate after login
                 // Toast
+                
 
             )
             .catch(error => {

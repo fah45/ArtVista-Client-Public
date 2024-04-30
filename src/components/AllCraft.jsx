@@ -27,7 +27,7 @@ const AllCraft = () => {
                                 <th className="p-3">Name</th>
                                 <th className="p-3">Category</th>
                                 <th className="p-3">Price</th>
-                                <th className="p-3">Creator</th>
+                                <th className="p-3">Rating</th>
                                 <th className="p-3 text-right">Details</th>
                             </tr>
                         </thead>
@@ -36,19 +36,20 @@ const AllCraft = () => {
                             loadedData.map(data => <tbody key={data._id}>
                                 <tr className="border-b border-opacity-20 border-gray-700 dark:border-gray-300 bg-gray-900 dark:bg-gray-50">
                                     <td className="p-3">
-                                        <p>{data.Subcategory}</p>
+                                        <p>{data.Username}</p>
                                     </td>
                                     <td className="p-3">
-                                        <p className="text-gray-400 dark:text-gray-600"></p>
+                                        <p className="text-gray-400 dark:text-gray-600">{data.Subcategory}</p>
                                     </td>
                                     <td className="p-3">
-                                        <p className="text-gray-400 dark:text-gray-600">{data.price}</p>
+                                        <p className="text-gray-400 dark:text-gray-600">{data.Price}</p>
                                     </td>
-                                    <td className="p-3 text-right">
+                                    <td className="p-3">
+                                    <p className="text-gray-400 dark:text-gray-600">{data.Rating}</p>
                                     </td>
                                     <td className="p-3 text-right">
                                         <span className="px-3 py-1 font-semibold rounded-md bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50">
-                                            <span>View Details</span>
+                                            <span>Details</span>
                                         </span>
                                     </td>
                                 </tr>
