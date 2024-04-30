@@ -30,9 +30,11 @@ const CraftCard = ({craft}) => {
                     <h2 className="card-title">{Subcategory}</h2>
 
                     <p><span className='font-bold'>Item Name: </span>{item}</p>
-
                     <p><span className='font-bold'>Price: </span>{Price}</p>
+                    <p><span className='font-bold'>Rating: </span>{Rating}</p>
                     <p><span className='font-bold'>Processing Time:</span>{Processing}</p>
+                    <p><span className='font-bold'>Customization: </span>{Customization}</p>
+                    <p><span className='font-bold'>Processing: </span>{Processing}</p>
 
                     <div className="card-actions w-full">
                         <Link className="w-full" to={`/craft/${_id}`}>
