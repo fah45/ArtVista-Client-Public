@@ -13,5 +13,7 @@ login Page: Step into your personalized sanctuary at ArtisanVista  with just a c
 
 Register Page: For Register any user added name, email, PhotoUrl and Password and also includes 2 social media register method like: Github and Gmail.
 
+npm Package Used for Challenges Task: https://react-tooltip.com/, https://www.npmjs.com/package/react-simple-typewriter
+
 
 
