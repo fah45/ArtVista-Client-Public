@@ -17,6 +17,7 @@ import AllCraft from './components/AllCraft.jsx';
 import MyCraft from './components/MyCraft.jsx';
 import CraftCard from './components/CraftCard.jsx';
 import CardDetails from './components/CardDetails.jsx';
+import PrivateRoutes from './Provider/PrivateRoutes.jsx';
 
 
 
@@ -50,7 +51,9 @@ const router = createBrowserRouter([
       },
       {
         path: "my-craft",
-        element: <MyCraft></MyCraft>
+        element: <PrivateRoutes>
+          <MyCraft></MyCraft>
+        </PrivateRoutes>
       },
       {
         path: "/craft",
