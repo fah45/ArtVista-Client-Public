@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 
@@ -45,12 +45,12 @@ const AllCraft = () => {
                                         <p className="text-gray-400 dark:text-gray-600">{data.Price}</p>
                                     </td>
                                     <td className="p-3">
-                                    <p className="text-gray-400 dark:text-gray-600">{data.Rating}</p>
+                                        <p className="text-gray-400 dark:text-gray-600">{data.Rating}</p>
                                     </td>
                                     <td className="p-3 text-right">
-                                        <span className="px-3 py-1 font-semibold rounded-md bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50">
-                                            <span>Details</span>
-                                        </span>
+                                        <Link className="w-full" to="/">
+                                            <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">View Details</button>
+                                        </Link>
                                     </td>
                                 </tr>
                             </tbody>)
