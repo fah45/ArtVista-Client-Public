@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import { CircleLoader, ClipLoader } from "react-spinners";
 
 
 const PrivateRoutes = ({ children }) => {
@@ -10,7 +11,7 @@ const PrivateRoutes = ({ children }) => {
     const location = useLocation()
 
     if (loading) {
-        return <p>Loading</p>
+        return <div className="min-h-screen flex justify-center items-center"><CircleLoader color="#36d7b7" /></div>
     }
 
     if (user) {

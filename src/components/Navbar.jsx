@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
 
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut,loading } = useContext(AuthContext)
     // const [success, setSuccess] = useState("")
     // const [errorMessage, setErrorMessage] = useState("")
 
@@ -26,10 +26,12 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/all-craft">All Art & craft Items</NavLink></li>
         <li><NavLink to="/add-craft">Add Craft Item</NavLink></li>
-        <li><NavLink to="/my-craft">My Art & Craft List</NavLink></li>
+        <li><NavLink to={`/my-craft/${user?.email}`}>My Art & Craft List</NavLink></li>
     </>
 
-
+if(loading){
+    return <p>Loading</p>
+}
 
     return (
         <div className="navbar bg-base-100">

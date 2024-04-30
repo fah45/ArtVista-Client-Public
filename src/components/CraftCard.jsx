@@ -27,7 +27,7 @@ const CraftCard = ({craft}) => {
                     <img src={PhotoUrl} alt="shoes" className="rounded-xl w-[350px] h-[180px]" />
                 </figure>
                 <div className="card-body items-left text-left">
-                    <h2 className="card-title">{ }</h2>
+                    <h2 className="card-title">{Subcategory}</h2>
 
                     <p><span className='font-bold'>Item Name: </span>{item}</p>
 

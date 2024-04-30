@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "add-craft",
-        element: <AddCraft></AddCraft>
+        element: <PrivateRoutes><AddCraft></AddCraft></PrivateRoutes>
       },
       {
         path: "all-craft",
@@ -50,10 +50,12 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/craft')
       },
       {
-        path: "my-craft",
+        path: "my-craft/:id",
         element: <PrivateRoutes>
           <MyCraft></MyCraft>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/my-craft/${params.id}`)
+
       },
       {
         path: "/craft",
@@ -64,9 +66,9 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
           <CardDetails></CardDetails>
         </PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
       }
-      
+
     ]
   },
 ]);
@@ -74,9 +76,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-    <HelmetProvider>
-    <RouterProvider router={router} />
-    </HelmetProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

@@ -48,7 +48,7 @@ const AllCraft = () => {
                                         <p className="text-gray-400 dark:text-gray-600">{data.Rating}</p>
                                     </td>
                                     <td className="p-3 text-right">
-                                        <Link className="w-full" to="/">
+                                        <Link className="w-full" to={`/craft/${data._id}`}>
                                             <button className="btn btn-sm bg-[#D2B48C] text-white text-xs w-full mt-2 rounded-md">View Details</button>
                                         </Link>
                                     </td>

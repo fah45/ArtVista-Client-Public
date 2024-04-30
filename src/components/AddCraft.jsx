@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../Provider/AuthProvider';
 
 const AddCraft = () => {
+    const { user, loading } = useContext(AuthContext)
+
+    console.log(user)
+
     const handleAddCraft = event => {
         event.preventDefault();
 
@@ -44,6 +50,11 @@ const AddCraft = () => {
             })
 
     }
+
+    if (loading) {
+        return <p>Loading</p>
+    }
+
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-4xl text-center font bold">Add Art & Craft</h2>
@@ -89,11 +100,11 @@ const AddCraft = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="username" className="text-sm">User Name</label>
-                                <input id="username" type="text" name="Username" placeholder="Username" className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:black-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300" />
+                                <input id="username" type="text" name="Username" defaultValue={user.displayName} placeholder="Username" className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:black-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="user email" className="text-sm">User Email</label>
-                                <input id="user email" type="text" name="email" placeholder="email" className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:black-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300" />
+                                <input id="user email" type="text" name="email" defaultValue={user.email} placeholder="email" className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:black-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
                                 <label htmlFor="Short Description" className="text-sm">Short Description</label>
